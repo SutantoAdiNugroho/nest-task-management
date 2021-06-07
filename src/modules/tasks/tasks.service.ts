@@ -39,46 +39,4 @@ export class TasksService {
 
     return task;
   }
-
-  // getAllTasks(): Task[] {
-  //   return this.arrTask;
-  // }
-  // searchTask(filterTaskDto: SearchTaskDto): Task[] {
-  //   const { status, search } = filterTaskDto;
-  //   let tasks = this.getAllTasks();
-  //   if (status) {
-  //     tasks = tasks.filter((task) => task.status === status);
-  //   }
-  //   if (search) {
-  //     tasks = tasks.filter((task) => {
-  //       if (task.title.includes(search) || task.description.includes(search)) {
-  //         return true;
-  //       }
-  //       return false;
-  //     });
-  //   }
-  //   return tasks;
-  // }
-  // getTaskById(id: string): Task {
-  //   const foundTask = this.arrTask.find((task) => task.id === id);
-  //   if (!foundTask) throw new NotFoundException(`Task with id ${id} not found`);
-  //   return foundTask;
-  // }
-  // createTask(createTaskDto: CreateTaskDto): Task {
-  //   const { title, description } = createTaskDto;
-  //   const task: Task = {
-  //     id: taskId,
-  //     title,
-  //     description,
-  //     status: TaskStatus.OPEN,
-  //   };
-  //   this.arrTask.push(task);
-  //   return task;
-  // }
-  // updateTaskStatus(id: string, status: TaskStatus) {
-  //   const task = this.getTaskById(id);
-  //   if (!task) throw new NotFoundException(`Task with id ${id} not found`);
-  //   task.status = status;
-  //   return task;
-  // }
 }
