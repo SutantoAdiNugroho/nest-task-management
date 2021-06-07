@@ -7,9 +7,9 @@ import {
   Patch,
   Query,
 } from '@nestjs/common';
-import { CreateTaskDto } from './dto/create-task.dto';
-import { SearchTaskDto } from './dto/search-task.dto';
-import { UpdateTaskStatusDto } from './dto/update-task.dto';
+import { CreateTaskDto } from './dto/input/create-task.dto';
+import { SearchTaskDto } from './dto/input/search-task.dto';
+import { UpdateTaskStatusDto } from './dto/input/update-task.dto';
 import { Task } from './tasks.entity';
 import { TasksService } from './tasks.service';
 

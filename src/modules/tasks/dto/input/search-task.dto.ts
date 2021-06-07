@@ -1,4 +1,4 @@
-import { TaskStatus } from '../helpers/tasks-status.enum';
+import { TaskStatus } from '../../helpers/tasks-status.enum';
 
 export class SearchTaskDto {
   status?: TaskStatus;
