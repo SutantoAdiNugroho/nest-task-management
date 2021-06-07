@@ -3,8 +3,8 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { EntityRepository, Repository } from 'typeorm';
-import { AuthCredentialsDto } from './dto/signup-user-in.dto';
-import { SignUpOutput } from './dto/signup-user-out.dto';
+import { AuthCredentialsDto } from './dto/input/signup-user-in.dto';
+import { SignUpOutput } from './dto/output/signup-user-out.dto';
 import { getHashPassword } from './helpers/user-pass.encrypt';
 import { User } from './user.entity';
 
