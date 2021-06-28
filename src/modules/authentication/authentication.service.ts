@@ -1,4 +1,5 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 import { SignInCredentialsDto } from './dto/input/signin-user-in.dto';
 import { AuthCredentialsDto } from './dto/input/signup-user-in.dto';
@@ -10,6 +11,7 @@ import { UserRepository } from './user.repository';
 export class AuthenticationService {
   constructor(
     @InjectRepository(UserRepository) private userRepository: UserRepository,
+    private jwtService: JwtService,
   ) {}
 
   async signUpUser(
@@ -30,8 +32,12 @@ export class AuthenticationService {
     const response = new SignUpOutput();
 
     if (userFound && comparedPassword) {
+      const payload = { username };
+      const token = await this.jwtService.sign(payload);
+
       response.status = 201;
       response.message = `Successfully login with username "${username}"`;
+      response.data = token;
 
       return response;
     } else {
